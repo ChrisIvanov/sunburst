@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sunburst-365": {
+      "hosting": {
+        "sunburst": [
+          "sunburst-365"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sunburst-365"
+  }
+}

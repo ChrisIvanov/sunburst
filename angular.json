@@ -97,6 +97,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "sunburst:build:production",
+            "firebaseProject": "sunburst-365",
+            "firebaseHostingSite": "sunburst-365"
+          }
         }
       }
     }
