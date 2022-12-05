@@ -1,6 +1,25 @@
+<nav class="nav">
+  <ul>
+    <li class="homeBtn">
+      <a class="active" href="#home" routerLink="/">Sunburst</a>
+    </li>
+    <li class="sec-navBtn">
+      <div *ngIf="isLoggedIn; else elseBlock">
+        <a href="#log-in" routerLink="/log-in">socialUser</a>
+      </div>
+      <ng-template #elseBlock
+        ><a href="#log-in" routerLink="/log-in"
+          ><button (click)="openDialog()">Log In</button></a
+        ></ng-template
+      >
+    </li>
+    <li class="sec-navBtn">
+      <a href="#contact" routerLink="/contact-us">Contact Us</a>
+    </li>
+    <li class="sec-navBtn">
+      <a href="#about" routerLink="/about-us">About Us</a>
+    </li>
+  </ul>
+</nav>
 
-<!-- <ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.name}}
-  </li>
-</ul> -->
+<div style="text-align: center; font-weight: bolder; font-size: 50px"></div>
