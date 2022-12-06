@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/compat/firestore'
+import { Observable } from '@firebase/util';
+import { getProducts } from '../../environments/environment';
 
 interface Product {
   description: String,
@@ -17,19 +17,8 @@ interface Product {
 })
 
 export class ProductsListComponent {
-  private productsCollection: AngularFirestoreCollection<Product>
-  products: Observable<Product[]>;
-  constructor(private readonly afs: AngularFirestore) {
-    this.productsCollection = this.afs.collection<Product>("Products");
-    this.products = this.productsCollection.valueChanges({ idField: 'customID' });
+  products;
+  constructor() {
+    this.products = getProducts();
   }
-
-  // async getProducts() {
-
-  //   if(docSnap != null || docSnap != undefined) {
-  //     console.log("Document data: ", docSnap)
-  //   } else {
-  //     console.log("No such document!");
-  //   }
-  // }
 }

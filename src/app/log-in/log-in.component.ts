@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GoogleLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
-import { DialogOverviewComponent } from '../dialog-overview/dialog-overview.component';
+import { DialogOverviewComponent } from '../dialog-overview/login-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -45,8 +45,7 @@ export class LogInComponent {
 
   openDialog(): void {
     const dialogRef = this.dialogRef.open(DialogOverviewComponent, {
-      width: '250px',
-
+      width: '250px'
     });
   }
 }

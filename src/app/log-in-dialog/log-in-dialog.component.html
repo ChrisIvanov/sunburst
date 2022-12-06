@@ -1,0 +1,65 @@
+<p>log-in-dialog works!</p>
+<button mat-dialog-close (click)="onClose()"></button>
+<div class="container" style="max-width: 550px">
+  <div *ngIf="isLoggedIn === false">
+    <form (ngSubmit)="onSubmit()" #logInForm="ngForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          required
+          [(ngModel)]="socialUser.email"
+          name="email"
+          #name="ngModel"
+        />
+        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+          Please enter a valid email address.
+        </div>
+      </div>
+
+    </form>
+
+    <div>
+      <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">
+        Login with Google
+      </button>
+    </div>
+  </div>
+  <div *ngIf="isLoggedIn === true">
+    <div class="form-group">
+      <label>First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [value]="socialUser.firstName"
+        id="firstname"
+        readonly
+      />
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        [value]="socialUser.lastName"
+        id="lastname"
+        readonly
+      />
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input
+        type="text"
+        class="form-control"
+        [value]="socialUser.email"
+        id="email"
+        readonly
+      />
+    </div>
+    <button type="button" (click)="logOut()" class="btn btn-primary">
+      Log Out
+    </button>
+  </div>
+</div>
