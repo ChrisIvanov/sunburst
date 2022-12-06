@@ -8,9 +8,8 @@
         <a href="#log-in" routerLink="/log-in">socialUser</a>
       </div>
       <ng-template #elseBlock
-        ><a href="#log-in" routerLink="/log-in"
-          ><button (click)="openDialog()">Log In</button></a
-        ></ng-template
+        ><a href="#log-in" routerLink="/log-in">
+          <div mat-button-close (click)="openDialog()">Log In</div></a></ng-template
       >
     </li>
     <li class="sec-navBtn">

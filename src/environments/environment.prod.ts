@@ -22,13 +22,13 @@ export const environment = {
 
 // Initialize Firebase
 const app = initializeApp(environment.firebase);
-const db = getFirestore(app);
+export const db = getFirestore(app);
 const analytics = getAnalytics(app);
 
-export async function getProducts() {
-  const products = collection(db, 'Products');
-  const productsSnapshot = await getDocs(products);
-  const productsList = productsSnapshot.docs.map(doc => doc.data());
-  console.log(productsList)
-  return productsList;
-}
+// export async function getProducts() {
+//   const products = collection(db, 'Products');
+//   const productsSnapshot = await getDocs(products);
+//   const productsList = productsSnapshot.docs.map(doc => doc.data());
+//   console.log(productsList)
+//   return productsList;
+// }

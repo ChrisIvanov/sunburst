@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { SocialUser, SocialAuthService } from '@abacritt/angularx-social-login';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +17,8 @@ export class AppComponent {
 
   constructor(
     private socialAuthService: SocialAuthService,
-    
+    private dialogRef: MatDialog
+
   ) { }
   ngOnInit() {
     this.socialAuthService.authState.subscribe((user) => {
@@ -25,11 +28,11 @@ export class AppComponent {
     });
   }
 
-  // openDialog(): void {
-  //   const dialogRef = this.dialogRef.open(DialogOverviewComponent, {
-  //     width: '250px',
-  //   });
-  // }
+  openDialog(): void {
+    const dialogRef = this.dialogRef.open(DialogOverviewComponent, {
+      width: '250px',
+    });
+  }
 }
 
 

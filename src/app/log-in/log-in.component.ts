@@ -9,8 +9,9 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.scss']
 })
+
 export class LogInComponent {
-  title = 'Sunburst';
+  title = 'Log In';
   loginForm!: FormGroup;
   socialUser!: SocialUser;
   isLoggedIn?= false;
@@ -22,7 +23,6 @@ export class LogInComponent {
   ) { }
 
   ngOnInit() {
-    this.openDialog();
       this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required],

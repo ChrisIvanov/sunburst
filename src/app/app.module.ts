@@ -14,7 +14,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component'
+import { DialogOverviewComponent } from './dialog-overview/dialog-overview.component';
+import { RegisterComponent } from './register/register.component';
+import { ProductsListComponent } from './products-list/products-list.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { DialogOverviewComponent } from './dialog-overview/dialog-overview.compo
     ContactUsComponent,
     AboutUsComponent,
     LogInComponent,
-    DialogOverviewComponent
+    DialogOverviewComponent,
+    RegisterComponent,
+    ProductsListComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,7 @@ import { DialogOverviewComponent } from './dialog-overview/dialog-overview.compo
     SocialLoginModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [
     {
